@@ -13,7 +13,7 @@ const Contact = () => {
 
 // enter your own web3 forms access key below
 
-    formData.append("access_key", "xxxxxxxxxxxxxxxxxxxxxxxx");
+    formData.append("access_key", "5da4bb35-9ff4-48d1-96cd-ad961deafa4b");
 
     const object = Object.fromEntries(formData);
     const json = JSON.stringify(object);
@@ -36,15 +36,15 @@ const Contact = () => {
   return (
     <div id='contact' className='contact'>
       <div className="title-box">
-        <h1>Get in touch</h1>
+        <h1>Connect now</h1>
         <img src={theme_pattern} alt="" />
       </div>
       <div className="contact-section">
         <div className="contact-left">
-            <h1>Let's talk</h1>
+            <h1>Let's collaborate</h1>
             <div className="contact-details">
                 <div className="contact-detail">
-                    <img src={mail_icon} alt="" /> <p>pduarte360@gmail.com</p>
+                    <img src={mail_icon} alt="" /> <p>pabloduarte097@gmail.com</p>
                 </div>
                 <div className="contact-detail">
                     <img src={call_icon} alt="" /> <p>+34 627-469-268</p>
@@ -59,9 +59,9 @@ const Contact = () => {
             <input type="text" placeholder='Enter your name' name='name' />
             <label htmlFor="">Your Email</label>
             <input type="email" placeholder='Enter your email' name='email' />
-            <label htmlFor="">Write your message here</label>
+            <label htmlFor="">Write your message</label>
             <textarea name="message" rows="8" placeholder='Enter your message'></textarea>
-            <button type='submit' className="contact-submit">Submit now</button>
+            <button type='submit' className="contact-submit">Submit</button>
         </form>
       </div>
     </div>
