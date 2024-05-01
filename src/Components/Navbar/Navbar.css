@@ -1,44 +1,69 @@
 .navbar {
     display: flex;
-    justify-content: center; /* Centra el contenido del menú */
+    justify-content: center;
     align-items: center;
-    position: relative; /* Permite posicionamiento absoluto para el botón */
+    position: relative;
     padding: 20px 10%;
-  }
-  
-  .nav-menu {
+}
+
+.nav-menu {
     display: flex;
     align-items: center;
     list-style: none;
-    gap: 40px; /* Ajusta según sea necesario */
+    gap: 40px;
     padding: 0;
-    margin: 0 auto; /* Asegura centración completa */
-  }
-  
-  .nav-connect {
+    margin: 0 auto;
+}
+
+.nav-connect {
     padding: 15px 20px;
     border-radius: 50px;
     background: linear-gradient(267deg, #DAD7C5 0.36%, #B923E1 102.86%);
-    transition: 0.5s;
+    transition: all 0.5s ease; /* Efecto suave para todas las propiedades animadas */
     position: absolute;
-    right: 10%; /* Ajusta según la necesidad visual */
-    top: 50%; /* Centra verticalmente el botón */
-    transform: translateY(-50%); /* Ajusta para centrar exactamente el botón */
-  }
-  
-  
-  
-.logo{
+    right: 10%;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.logo {
     width: 100px;
 }
-.nav-connect:hover{
-    transform: scale(1.05);
+
+.nav-connect:hover {
+    transform: translateY(-50%) scale(1.05); /* Asegura que el botón se escale sin mover su posición central */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2); /* Agrega sombra para destacar el botón */
 }
-.nav-menu li{
+
+/* Estilos adicionales para el hover de los enlaces del menú */
+.nav-menu li {
     display: flex;
     flex-direction: column;
     gap: 5px;
     cursor: pointer;
+}
+
+.nav-menu a {
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.nav-menu a:hover {
+    color: #E0A0FF; /* Cambia el color al hacer hover */
+    transform: translateY(-2px); /* Crea un pequeño efecto de elevación */
+}
+
+.nav-menu a:hover::after {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 2px;
+    background-color: #E0A0FF;
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    transition: width 0.3s ease;
 }
 
 .nav-menu li img{

@@ -1,87 +1,121 @@
-.hero{
+.hero {
     display: flex;
     align-items: center;
     flex-direction: column;
     gap: 20px;
-    margin-top: 50px; 
+    margin-top: 50px;
 }
-.profile-img{
+
+.profile-img {
     margin-top: 30px;
     width: 240px;
     border-radius: 50%;
 }
-.hero h1{
+
+.hero h1 {
     text-align: center;
     width: 65%;
     font-size: 65px;
     font-weight: 600;
     line-height: 70px;
 }
-.hero h1 span{
-    background: linear-gradient(270deg, #DF8908 10%, #B415FF 100%);
+
+.hero h1 span {
+    background: linear-gradient(270deg, #DF8908 20%, #B415FF 100%);
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
-.hero p{
+
+.hero p {
     width: 50%;
     text-align: center;
     font-size: 18px;
     line-height: 30px;
 }
-.hero-action{
+
+.hero-action {
     display: flex;
     align-items: center;
     gap: 25px;
     font-weight: 500;
     margin-bottom: 50px;
 }
-.hero-connect{
+
+.hero-connect, .hero-resume {
     padding: 20px 30px;
     border-radius: 50px;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    border: 2px solid transparent; /* Añade esto si deseas un borde */
     background: linear-gradient(264deg, #DF8908 -5.09%, #B415FF 106.28%);
-    cursor: pointer;
+    transition: transform 0.3s ease; /* Añade transiciones suaves */
 }
-.hero-resume{
+
+.hero-resume {
     padding: 20px 55px;
-    border-radius: 50px;
     border: 2px solid #FFF;
-    cursor: pointer;
 }
-.hero-connect:hover{
-    border: 2px solid white;
+
+@keyframes glowing-border-animation {
+    0% { background-position: 100% 0; }
+    100% { background-position: 0 0; }
 }
-.hero-resume:hover{
-    border-color: #B415FF;
+
+.hero-connect::before, .hero-resume::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 50px;
+    background: linear-gradient(90deg, rgba(218,215,197,1) 0%, rgba(185,35,225,1) 50%, rgba(218,215,197,1) 100%);
+    background-size: 200% 100%;
+    z-index: -1;
+    transition: opacity 0.3s ease;
+    opacity: 0;
 }
-@media(max-width:768px){
-    .profile-img{
+
+.hero-connect:hover::before, .hero-resume:hover::before {
+    animation: glowing-border-animation 3s linear infinite;
+    opacity: 1;
+}
+
+.hero-connect:hover, .hero-resume:hover {
+    transform: scale(1.05); /* Aumenta ligeramente el tamaño al hacer hover */
+    color: white; /* Cambia el color del texto al hacer hover */
+    border-color: white; /* Asegura que el borde sea visible durante el hover */
+}
+
+@media(max-width:768px) {
+    .profile-img {
         margin-top: 50px;
         width: 200px;
     }
-    .hero h1{
+
+    .hero h1 {
         margin-top: 10px;
         width: 90%;
         font-size: 35px;
     }
-    .hero p{
+
+    .hero p {
         width: 80%;
         font-size: 16px;
         line-height: 25px;
         margin: 5px 0px;
     }
-    .hero-action{
+
+    .hero-action {
         gap: 10px;
         font-weight: 500;
         margin-bottom: 50px;
     }
-    .hero-connect{
+
+    .hero-connect, .hero-resume {
         padding: 20px 20px;
-        border-radius: 40px;
-        font-size: 14px;
-    }
-    .hero-resume{
-        padding: 18px 30px;
         border-radius: 40px;
         font-size: 14px;
     }

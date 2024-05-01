@@ -1,15 +1,12 @@
 import React from 'react'
 import './About.css'
-import theme_pattern from '../../assets/theme_pattern.svg'
 import profile_img from '../../assets/linkedinpablo2.png'
-
 
 const About = () => {
   return (
     <div id='about' className='about'>
       <div className="title-box">
         <h1>About me</h1>
-        <img src={theme_pattern} alt="" />
       </div>
       <div className="about-sections">
         <div className="about-left">
@@ -17,7 +14,7 @@ const About = () => {
         </div>
         <div className="about-right">
             <div className="about-para">
-                <p>A cybersecurity and cloud computing enthusiast. I am currently focused on advancing my skills in cybersecurity and exploring innovative cloud solutions.  Throughout my academic journey, I have collaborated on various projects, contributing to enhancing security and efficiency in digital environments</p>
+                <p>A cybersecurity and cloud computing enthusiast. I am currently focused on advancing my skills in cybersecurity and exploring innovative cloud solutions. Throughout my academic journey, I have collaborated on various projects, contributing to enhancing security and efficiency in digital environments</p>
             </div>
             <div className="about-skills">
                 <div className="about-skill"><p>AWS</p><hr style={{width:"70%"}} /></div>
